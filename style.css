@@ -94,12 +94,13 @@ section {
 }
 
 #menu-icon {
-  font-size: 3.6rem;
+  font-size: 2.5rem;
   color: var(--text-color);
   display: none;
   cursor: pointer;
-  margin-left: auto; /* Add this to push icon to right */
-  z-index: 101; /* Ensure it stays above other elements */
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -108,26 +109,26 @@ section {
   }
 
   .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
+    top: 0;
+    right: -100%;
     width: 100%;
-    padding: 1rem 3%;
+    height: 100vh;
     background: var(--bg-color);
-    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    display: none;
+    padding: 2rem;
+    transition: 0.3s ease;
+    z-index: 9;
   }
 
   .navbar.active {
-    display: block;
+    right: 0;
   }
 
   .navbar a {
     display: block;
-    font-size: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
     text-align: center;
+    font-size: 1.5rem;
   }
 }
 
