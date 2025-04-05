@@ -38,8 +38,9 @@ body {
 
 section {
   min-height: 100vh;
-  min-width: 100%;
+  width: 100%;
   padding: 7rem 9% 2rem;
+  overflow: hidden; /* Add this to prevent overflow */
 }
 
 /* ==========================================
@@ -114,10 +115,14 @@ section {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: var(--bg-color);
-    padding: 2rem;
-    transition: 0.3s ease;
-    z-index: 9;
+    background: rgba(31, 36, 45, 0.98);
+    padding: 5rem 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s ease;
+    z-index: 99;
   }
 
   .navbar.active {
@@ -127,8 +132,8 @@ section {
   .navbar a {
     display: block;
     margin: 2rem 0;
-    text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: var(--text-color);
   }
 }
 
