@@ -49,17 +49,17 @@ window.onscroll = () => {
     Scroll Reveal 
 ====================== */
 ScrollReveal({
-  reset: true,
+  reset: false,  // Changed from true to prevent reloading
   distance: "80px",
-  duration: 2000,
-  delay: 200,
+  duration: 1000,  // Reduced from 2000
+  delay: 100      // Reduced from 200
 });
 
 ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
-ScrollReveal().reveal(
-  ".home-img, .services-container, .portfolio-box, .contact form",
-  { origin: "bottom" }
-);
+ScrollReveal().reveal(".services-container, .portfolio-box, .contact form", { 
+  origin: "bottom",
+  interval: 200  // Add interval for staggered animation
+});
 ScrollReveal().reveal(".home-content h1, .about-img", { origin: "left" });
 ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
 
@@ -72,4 +72,21 @@ const typed = new Typed(".multiple-text", {
   backSpeed: 100,
   backDelay: 1000,
   loop: true,
+});
+
+/* ===================== 
+    Read More Functionality 
+====================== */
+document.getElementById('read-more-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  const content = document.getElementById('more-content');
+  const btn = document.getElementById('read-more-btn');
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    btn.textContent = 'Read Less';
+  } else {
+    content.style.display = 'none';
+    btn.textContent = 'Read More';
+  }
 });

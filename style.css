@@ -94,9 +94,41 @@ section {
 }
 
 #menu-icon {
+  font-size: 3.6rem;
   color: var(--text-color);
-  font-size: 2rem;
   display: none;
+  cursor: pointer;
+  margin-left: auto; /* Add this to push icon to right */
+  z-index: 101; /* Ensure it stays above other elements */
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+  }
 }
 
 /* ==========================================
@@ -254,6 +286,11 @@ span {
   margin: 2rem 0 3rem;
 }
 
+.first-paragraph {
+  font-size: 1.3rem;
+  margin: 2rem 0;
+}
+
 /* ==========================================
               Services
 =========================================== */
@@ -305,6 +342,47 @@ span {
 .services-box p {
   font-size: 1rem;
   margin: 1rem 0 1.5rem;
+}
+
+/* ==========================================
+              Skills
+=========================================== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.skill-box {
+  background: var(--second-bg-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: .2rem solid var(--bg-color);
+  transition: .5s ease;
+}
+
+.skill-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+.skill-box img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1rem;
+  transition: .5s ease;
+}
+
+.skill-box:hover img {
+  transform: scale(1.1);
+}
+
+.skill-box h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
 }
 
 /* ==========================================
@@ -462,6 +540,10 @@ span {
 .contact form .btn {
   margin-top: 1rem;
   cursor: pointer;
+}
+
+.hidden-content {
+  transition: all 0.5s ease;
 }
 
 /* ==========================================
