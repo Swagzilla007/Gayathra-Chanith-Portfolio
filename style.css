@@ -397,7 +397,6 @@ span {
 .portfolio {
   background: var(--second-bg-color);
   padding: 5rem 9% 2rem;
-  min-height: 150vh; /* Increased minimum height */
 }
 
 .portfolio h2 {
@@ -406,23 +405,21 @@ span {
 
 .portfolio-container {
   display: grid;
+  height: 1200px;
   grid-template-columns: repeat(3, minmax(300px, 380px)); /* Increased min and max widths */
   align-items: start;
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 4rem;
 }
 
 .portfolio-box {
   position: relative;
-  height: 600px; /* Fixed height */
+  height: 600px; /* Increased height */
   width: 100%; /* Ensure full width within grid cell */
   border-radius: 2rem;
   box-shadow: 0 0 1rem var(--bg-color);
   overflow: hidden;
   background: var(--second-bg-color);
-  display: flex;
-  flex-direction: column;
 }
 
 .portfolio-box img {
@@ -512,32 +509,16 @@ span {
 }
 
 @media (max-width: 1200px) {
-  .portfolio {
-    min-height: 200vh; /* More space for 2 columns */
-  }
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  .portfolio-box {
-    height: 600px; /* Maintain same height */
+    height: 1200px;
   }
 }
 
 @media (max-width: 768px) {
-  .portfolio {
-    padding: 3rem 5% 2rem;
-    min-height: 350vh; /* Even more space for single column */
-  }
-  
   .portfolio-container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  
-  .portfolio-box {
-    height: 600px; /* Keep consistent height */
+    height: 2400px;
   }
 }
 
