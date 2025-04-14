@@ -397,6 +397,7 @@ span {
 .portfolio {
   background: var(--second-bg-color);
   padding: 5rem 9% 2rem;
+  min-height: 150vh;
 }
 
 .portfolio h2 {
@@ -509,16 +510,33 @@ span {
 }
 
 @media (max-width: 1200px) {
+  .portfolio {
+    min-height: 200vh;
+  }
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
-    height: 1200px;
+    gap: 2rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 932px), 
+       (max-width: 430px),  /* iPhone 14 Pro Max */
+       (max-device-width: 932px) { /* Target all mobile devices */
+  .portfolio {
+    min-height: 450vh;
+    padding: 3rem 5% 2rem;
+  }
+  
   .portfolio-container {
-    grid-template-columns: 1fr;
-    height: 2400px;
+    grid-template-columns: 1fr !important; /* Force single column */
+    width: 90%;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 2.5rem;
+  }
+
+  .portfolio-box {
+    width: 100%;
   }
 }
 
@@ -663,5 +681,5 @@ span {
 
 .footer-iconTop a i {
   font-size: 1.5rem;
-  color: var (--second-bg-color);
+  color: var(--second-bg-color);
 }
