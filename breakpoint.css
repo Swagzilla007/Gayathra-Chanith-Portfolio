@@ -237,7 +237,7 @@
   }
   .portfolio-container {
     grid-template-columns: repeat(1, 1fr);
-    height: 2400px;  /* Increased from 1600px */
+    height: 3600px;  /* Increased from 2400px to accommodate all projects */
     gap: 2rem;
     padding: 0.5rem;
   }
@@ -277,6 +277,21 @@
     width: 40px;
     height: 40px;
   }
+
+  .contact {
+    min-height: 120vh;
+    padding-bottom: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info {
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .contact-item {
+    margin-bottom: 2rem;
+  }
 }
 @media (max-width: 391px) {
   .home-content h1 {
@@ -302,6 +317,9 @@
     width: 70vw;
     height: 70vw;
   }
+  .portfolio-container {
+    height: 3900px;  /* Maintain same height for smaller screens */
+  }
   .contact form textarea {
     height: 15rem;
     padding: 1rem;
@@ -320,5 +338,10 @@
   }
   .footer-iconTop a i {
     font-size: 1rem;
+  }
+
+  .contact {
+    min-height: 130vh;
+    padding-bottom: 10rem;
   }
 }
